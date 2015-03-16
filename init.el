@@ -16,6 +16,9 @@
 
 (require 'mlos-ido-config)
 
+;; Set theme early
+(load-theme 'monokai t)
+
 ;; Indentation
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
@@ -24,12 +27,11 @@
 (require 'paren)
 (show-paren-mode)
 (setq show-paren-delay 0.08)
-(setq show-paren-style 'expression)
-(set-face-background 'show-paren-match "darkseagreen2")
 
 ;; No fancy GUI
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 ;; Move between windows with S-(arrow)
 (windmove-default-keybindings)
@@ -52,10 +54,8 @@
 
 ;; Highlight current line
 (global-hl-line-mode)
-(set-face-background 'hl-line "#e0f8ff")
 
 ;; Indent automatically on return
-;(global-set-key (kbd "RET") (key-binding (kbd "C-j")))
 (electric-indent-mode)
 
 ;; Switch windows with M-o
