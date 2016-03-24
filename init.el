@@ -102,5 +102,4 @@
 (setq inhibit-startup-message t)
 
 ;; Font - Consolas
-(set-face-attribute 'default nil
-                    :family "Consolas")
+(set-face-attribute 'default nil :family "Consolas" :height 100)
