@@ -1,0 +1,7 @@
+session.*
+smex.save
+tramp
+auto-save-list
+elpa/
+eshell/
+ido.last
