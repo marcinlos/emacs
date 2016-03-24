@@ -82,6 +82,9 @@
 ;; Override marked text
 (delete-selection-mode)
 
+;; Default column width - 80
+(setq-default fill-column 80)
+
 ;; Answer prompt with one letter
 (fset 'yes-or-no-p 'y-or-n-p)
 
