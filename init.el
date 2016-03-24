@@ -105,3 +105,5 @@
 
 ;; Font - Consolas
 (set-face-attribute 'default nil :family "Consolas" :height 100)
+
+(require 'mlos-auctex-config)
