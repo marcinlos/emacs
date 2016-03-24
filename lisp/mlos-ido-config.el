@@ -8,7 +8,16 @@
 (flx-ido-mode)
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
+
+;; Never ask to confirm creation of new buffer
+;; (both are required)
 (setq ido-create-new-buffer 'always)
+(setq confirm-nonexistent-file-or-buffer nil)
+
+(defvar ido-context-switch-command nil)
+(defvar ido-cur-item nil)
+(defvar ido-default-item nil)
+(defvar ido-cur-list nil)
 
 (require 'ido-ubiquitous)
 (ido-ubiquitous-mode)
