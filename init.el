@@ -57,6 +57,8 @@
 
 ;; Indent automatically on return
 (electric-indent-mode)
+(add-hook 'org-mode-hook
+          (lambda () (electric-indent-mode -1)))
 
 ;; Switch windows with M-o
 (global-set-key (kbd "M-o") 'other-window)
