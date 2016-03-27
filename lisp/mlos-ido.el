@@ -1,36 +1,43 @@
 ;;; Configuration for Ido & smex
 
-;; Ido with improved flex matching
-(require 'ido)
-(require 'flx-ido)
-(ido-mode)
-(ido-everywhere)
-(flx-ido-mode)
-(setq ido-enable-flex-matching t)
-(setq ido-use-faces nil)
+;; ido, basic config
+(use-package ido
+  :ensure t
+  :config
+  (setq ido-enable-flex-matching t)
+  ; Don't ask to confirm creation of new buffer
+  (setq ido-create-new-buffer 'always
+        confirm-nonexistent-file-or-buffer nil)
+  (ido-mode))
 
-;; Vertical mode
-(require 'ido-vertical-mode)
-(ido-vertical-mode 1)
-(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+;; Flex matching for ido
+(use-package flx-ido
+  :ensure t
+  :config
+  (setq ido-use-faces nil) ; to see highlighted matching parts
+  (flx-ido-mode))
 
-;; Never ask to confirm creation of new buffer
-;; (both are required)
-(setq ido-create-new-buffer 'always)
-(setq confirm-nonexistent-file-or-buffer nil)
+;; Use ido everywhere
+(use-package ido-ubiquitous
+  :ensure t
+  :config
+  (ido-ubiquitous-mode))
 
-(defvar ido-context-switch-command nil)
-(defvar ido-cur-item nil)
-(defvar ido-default-item nil)
-(defvar ido-cur-list nil)
-
-(require 'ido-ubiquitous)
-(ido-ubiquitous-mode)
+;; Vertical display of ido matches
+(use-package ido-vertical-mode
+  :ensure t
+  :config
+  (ido-vertical-mode)
+  ; Use C-n and C-p to traverse match list
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 
 ;; Smex - ido for commands
-(setq smex-save-file "~/.emacs.d/smex.save")
-(require 'smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
+(use-package smex
+  :ensure t
+  :config
+  (setq smex-save-file "~/.emacs.d/smex.save")
+  (smex-initialize)
+  :bind ("M-x" . smex))
+
 
 (provide 'mlos-ido)

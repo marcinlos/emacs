@@ -10,8 +10,18 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+;; Set up load path
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
+;; Install and configure use-package
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-verbose t)
+
+
+;; Personal data (name, email)
 (require 'personal-info)
 
 ;; General config
@@ -20,8 +30,10 @@
 (require 'mlos-backup)
 (require 'mlos-ido)
 (require 'mlos-misc)
+(require 'mlos-company)
 
 ;; Language-specific config
 (require 'mlos-org)
-(require 'mlos-auctex)
+(require 'mlos-latex)
 (require 'mlos-haskell)
+

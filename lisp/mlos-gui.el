@@ -4,14 +4,15 @@
 (load-theme 'monokai t)
 
 ;; Highlight parenthesis pairs
-(require 'paren)
-(show-paren-mode)
-(setq show-paren-delay 0.08)
+(use-package paren
+  :config
+  (show-paren-mode)
+  (setq show-paren-delay 0.08))
 
-;; Disable blinking cursor
+;; disable blinking cursor
 (blink-cursor-mode -1)
 
-;; No useless GUI elements
+;; no useless GUI elements
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
