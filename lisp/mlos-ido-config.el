@@ -9,6 +9,11 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 
+;; Vertical mode
+(require 'ido-vertical-mode)
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
 ;; Never ask to confirm creation of new buffer
 ;; (both are required)
 (setq ido-create-new-buffer 'always)
