@@ -11,4 +11,4 @@
 (require 'flyspell)
 (add-hook 'LaTeX-mode-hook (lambda () (flyspell-mode t)))
 
-(provide 'mlos-auctex-config)
+(provide 'mlos-auctex)

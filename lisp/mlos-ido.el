@@ -33,4 +33,4 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 
-(provide 'mlos-ido-config)
+(provide 'mlos-ido)
