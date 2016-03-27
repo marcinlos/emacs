@@ -1,6 +1,6 @@
 ;;; Personal data
 
-(setq user-full-name "Marcin Łoś")
-(setq user-mail-address "losiu99@gazeta.pl")
+(setq user-full-name "Marcin Łoś"
+      user-mail-address "marcin.los.91@gmail.com")
 
 (provide 'personal-info)
