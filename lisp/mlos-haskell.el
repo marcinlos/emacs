@@ -6,6 +6,9 @@
   (setenv "PATH" (concat mlos/cabal-path ":" (getenv "PATH")))
   (add-to-list 'exec-path mlos/cabal-path))
 
+(use-package flycheck-haskell
+  :ensure t)
+
 (use-package haskell-mode
   :ensure t
   :config

@@ -30,7 +30,9 @@
 (require 'mlos-backup)
 (require 'mlos-ido)
 (require 'mlos-misc)
+(require 'mlos-magit)
 (require 'mlos-company)
+(require 'mlos-flycheck)
 
 ;; Language-specific config
 (require 'mlos-org)
