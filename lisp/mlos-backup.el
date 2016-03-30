@@ -1,7 +1,7 @@
 ;;; Backup configuration
 
 ;; Backups in separate directory
-(defconst mlos-backup-dir "~/.emas-backups" "Backup directory")
+(defconst mlos-backup-dir "~/.emacs-backups" "Backup directory")
 
 ;; Create it if it does not exist
 (unless (file-exists-p mlos-backup-dir)
