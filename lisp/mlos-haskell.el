@@ -49,7 +49,7 @@
   ; haskell bindings
   (with-eval-after-load 'haskell-mode
     (bind-key "M-/" 'company-complete haskell-mode-map)
-    (bind-key "C-c C-l" 'haskell-process-load-or-reload haskell-mode-map)
+    (bind-key "C-c C-l" 'haskell-process-load-file haskell-mode-map)
     (bind-key "C-c C-z" 'haskell-interactive-switch haskell-mode-map)
     (bind-key "C-c C-n C-t" 'haskell-process-do-type haskell-mode-map)
     (bind-key "C-c C-n C-i" 'haskell-process-do-info haskell-mode-map)
