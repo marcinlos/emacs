@@ -24,6 +24,10 @@
         '("--ghc-option=-ferror-spans" "--with-ghc=ghci-ng"))
 
   (defun mlos/haskell-mode-hook ()
+    ; enable interactive mode
+    (interactive-haskell-mode)
+    ; enable enhanced documentation
+    (turn-on-haskell-doc)
     ; insert module template into a newly created module file
     (haskell-auto-insert-module-template)
     ; flycheck support
@@ -33,9 +37,9 @@
     (haskell-decl-scan-mode)
 
     ; enable code completion
-    (company-mode))
     (company-mode)
     ; diminish minor modes
+    (diminish 'haskell-doc-mode)
     (diminish 'interactive-haskell-mode))
 
   (add-hook 'haskell-mode-hook 'mlos/haskell-mode-hook)
