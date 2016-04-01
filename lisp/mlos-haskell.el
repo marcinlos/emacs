@@ -34,6 +34,9 @@
 
     ; enable code completion
     (company-mode))
+    (company-mode)
+    ; diminish minor modes
+    (diminish 'interactive-haskell-mode))
 
   (add-hook 'haskell-mode-hook 'mlos/haskell-mode-hook)
 
@@ -58,6 +61,7 @@
 ;; hi2 intendation
 (use-package hi2
   :ensure t
+  :diminish 'hi2-mode
   :config
   (add-hook 'haskell-mode-hook 'turn-on-hi2)
   ; disable visual indicators

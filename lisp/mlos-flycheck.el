@@ -1,6 +1,7 @@
 ;;; Flycheck configuration
 
 (use-package flycheck
-  :ensure t)
+  :ensure t
+  :diminish " ✓ ")
 
 (provide 'mlos-flycheck)

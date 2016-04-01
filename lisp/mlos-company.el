@@ -3,6 +3,7 @@
 
 (use-package company
   :ensure t
+  :diminish ""
   :config
   ; start completion at 2 characters
   (setq company-minimum-prefix-length 2)
