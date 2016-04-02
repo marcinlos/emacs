@@ -14,8 +14,17 @@
 ;; Align by regex
 (global-set-key (kbd "C-x \\") 'align-regexp)
 
-;; (Un)comment with C-;
-(global-set-key (kbd "C-;") 'comment-or-uncomment-region)
+;; Toggle comments with C-;
+(defun mlos/toggle-comment ()
+  "Toggles comment of selected region or current line"
+  (interactive)
+  (let (beg end)
+    (if (region-active-p)
+        (setq beg (region-beginning) end (region-end))
+      (setq beg (line-beginning-position) end (line-end-position)))
+    (comment-or-uncomment-region beg end)))
+
+(global-set-key (kbd "C-;") 'mlos/toggle-comment)
 
 ;; Better expanding
 (global-set-key (kbd "M-/") 'hippie-expand)
