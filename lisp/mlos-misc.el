@@ -7,6 +7,12 @@
   (windmove-default-keybindings)
   (setq windmove-wrap-around t))
 
+;; Save/restore window configuration
+(use-package winner
+  :bind ("C-x l" . winner-undo)
+  :config
+  (winner-mode))
+
 ;; Scrolling
 (setq-default scroll-conservatively 100
               scroll-margin 3
