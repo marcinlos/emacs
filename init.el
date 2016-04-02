@@ -29,6 +29,7 @@
 (require 'mlos-editing)
 (require 'mlos-backup)
 (require 'mlos-ido)
+(require 'mlos-spelling)
 (require 'mlos-misc)
 (require 'mlos-magit)
 (require 'mlos-company)
