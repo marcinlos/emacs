@@ -5,7 +5,7 @@
   :ensure t
   :config
   (setq ido-enable-flex-matching t)
-  ; Don't ask to confirm creation of new buffer
+  ;; Don't ask to confirm creation of new buffer
   (setq ido-create-new-buffer 'always
         confirm-nonexistent-file-or-buffer nil)
   (ido-mode))
@@ -14,7 +14,8 @@
 (use-package flx-ido
   :ensure t
   :config
-  (setq ido-use-faces nil) ; to see highlighted matching parts
+  ;; to see highlighted matching parts
+  (setq ido-use-faces nil)
   (flx-ido-mode))
 
 ;; Use ido everywhere
@@ -28,7 +29,7 @@
   :ensure t
   :config
   (ido-vertical-mode)
-  ; Use C-n and C-p to traverse match list
+  ;; Use C-n and C-p to traverse match list
   (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 
 ;; Smex - ido for commands

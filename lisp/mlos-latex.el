@@ -5,14 +5,14 @@
   :config
   (setq TeX-auto-save t
         TeX-parse-self t)
-  ; for multi-project files - prompt for master file
+  ;; for multi-project files - prompt for master file
   (setq-default TeX-master nil)
 
   (defun mlos/latex-mode-hook ()
-    ; paragraphs are filled to 80 characters
+    ;; paragraphs are filled to 80 characters
     (turn-on-auto-fill)
     (set-fill-column 80)
-    ; spell checker
+    ;; spell checker
     (require 'flyspell)
     (flyspell-mode t))
 

@@ -18,35 +18,35 @@
    '(haskell-process-auto-import-loaded-modules t)
    '(haskell-process-log t))
 
-  ; Use cabal-repl with ghci-ng
+  ;; Use cabal-repl with ghci-ng
   (custom-set-variables '(haskell-process-type 'cabal-repl))
   (setq haskell-process-args-cabal-repl
         '("--ghc-option=-ferror-spans" "--with-ghc=ghci-ng"))
 
   (defun mlos/haskell-mode-hook ()
-    ; enable interactive mode
+    ;; enable interactive mode
     (interactive-haskell-mode)
-    ; enable enhanced documentation
+    ;; enable enhanced documentation
     (turn-on-haskell-doc)
-    ; insert module template into a newly created module file
+    ;; insert module template into a newly created module file
     (haskell-auto-insert-module-template)
-    ; flycheck support
+    ;; flycheck support
     (flycheck-mode)
     (flycheck-haskell-setup)
-    ; enable moving by declaration
+    ;; enable moving by declaration
     (haskell-decl-scan-mode)
 
-    ; enable code completion
+    ;; enable code completion
     (company-mode)
-    ; diminish minor modes
+    ;; diminish minor modes
     (diminish 'haskell-doc-mode)
     (diminish 'interactive-haskell-mode))
 
   (add-hook 'haskell-mode-hook 'mlos/haskell-mode-hook)
 
-  ; Key bindings
+  ;; Key bindings
 
-  ; haskell bindings
+  ;; haskell bindings
   (with-eval-after-load 'haskell-mode
     (bind-key "M-/" 'company-complete haskell-mode-map)
     (bind-key "C-c C-l" 'haskell-process-load-file haskell-mode-map)
@@ -55,7 +55,7 @@
     (bind-key "C-c C-n C-i" 'haskell-process-do-info haskell-mode-map)
     (bind-key "C-c C-n C-c" 'haskell-process-cabal-buil haskell-mode-map)
     (bind-key "C-c C-n c" 'haskell-process-cabal haskell-mode-map))
-  ; cabal file bindings
+  ;; cabal file bindings
   (with-eval-after-load 'haskell-cabal
     (bind-key "C-c C-z" 'haskell-interactive-switch haskell-cabal-mode-map)
     (bind-key "C-c C-k" 'haskell-interactive-mode-clear haskell-cabal-mode-map)
@@ -68,7 +68,7 @@
   :diminish 'hi2-mode
   :config
   (add-hook 'haskell-mode-hook 'turn-on-hi2)
-  ; disable visual indicators
+  ;; disable visual indicators
   (setq hi2-show-indentations nil))
 
 ;; Backend for company
