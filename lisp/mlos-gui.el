@@ -21,7 +21,12 @@
 (setq inhibit-startup-message t)
 
 ;; Display line numbers on the left
-(global-linum-mode)
+(use-package linum
+  :config
+  ;; only needed for programming
+  (add-hook 'prog-mode-hook 'linum-mode))
+
+;; Display column number in the mode line
 (column-number-mode)
 
 ;; Highlight current line
