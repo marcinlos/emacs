@@ -38,7 +38,7 @@
   :config
   (setq smex-save-file "~/.emacs.d/smex.save")
   (smex-initialize)
-  :bind ("M-x" . smex))
+  :bind ([remap execute-extended-command] . smex))
 
 
 (provide 'mlos-ido)

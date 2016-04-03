@@ -22,7 +22,7 @@
 (global-set-key (kbd "M-o") 'other-window)
 
 ;; Use IBuffer instead of built-in buffer manager
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key [remap list-buffers] 'ibuffer)
 
 ;; Answer prompt with one letter
 (fset 'yes-or-no-p 'y-or-n-p)
