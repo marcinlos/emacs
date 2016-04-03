@@ -22,7 +22,25 @@
 (global-set-key (kbd "M-o") 'other-window)
 
 ;; Use IBuffer instead of built-in buffer manager
-(global-set-key [remap list-buffers] 'ibuffer)
+(use-package ibuffer
+  :bind (([remap list-buffers] . ibuffer))
+  :config
+
+  (defun mlos/ibuffer-ido-find-file (file)
+    "Analogous to `ibuffer-find-file', but uses `ido'"
+    (interactive
+     (let ((default-dir (let ((buf (ibuffer-current-buffer)))
+                          (if (buffer-live-p buf)
+                              (with-current-buffer buf
+                                default-directory)
+                            default-directory))))
+       (list (ido-read-file-name "Find file:" default-dir))))
+    (find-file file))
+
+  (define-key ibuffer-mode-map (kbd "C-x C-f") 'mlos/ibuffer-ido-find-file)
+  ;; conflicts with custom other-window binding
+  (define-key ibuffer-mode-map (kbd "M-o") nil))
+
 
 ;; Answer prompt with one letter
 (fset 'yes-or-no-p 'y-or-n-p)
