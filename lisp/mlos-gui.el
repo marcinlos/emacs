@@ -20,6 +20,10 @@
 ;; No splash screen
 (setq inhibit-startup-message t)
 
+;; Short initial message in the scratch buffer
+(setq initial-scratch-message ";; Scratch buffer - welcome!\n\n")
+
+
 ;; Display line numbers on the left
 (use-package linum
   :config
