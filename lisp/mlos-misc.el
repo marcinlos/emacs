@@ -36,6 +36,10 @@
   ;; No delay for ElDoc
   (setq eldoc-idle-delay 0))
 
+;; Auto-revert
+(use-package autorevert
+  :diminish auto-revert-mode)
+
 ;; Better naming for buffers with same name
 (use-package uniquify
   :config
