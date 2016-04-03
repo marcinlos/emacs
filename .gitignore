@@ -5,4 +5,6 @@ auto-save-list
 elpa/
 eshell/
 url/
+backup/
 ido.last
+

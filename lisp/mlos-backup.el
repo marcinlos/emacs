@@ -2,7 +2,7 @@
 
 ;; Backups in separate directory
 (defconst mlos/backup-dir
-  (expand-file-name "~/.emacs-backups/")
+  (expand-file-name "backup/" user-emacs-directory)
   "Backup directory")
 
 ;; Create it if it does not exist
