@@ -42,5 +42,18 @@
 ;; Override marked text
 (delete-selection-mode)
 
+;; Improved zap-to-char
+(use-package zop-to-char
+  :ensure t
+  :bind (("M-z" . zop-to-char)
+         ("M-Z" . zop-up-to-char)))
+
+;; More natural undo/redo system
+(use-package undo-tree
+  :ensure t
+  :diminish undo-tree-mode
+  :config
+  (global-undo-tree-mode))
+
 
 (provide 'mlos-editing)
