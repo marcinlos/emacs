@@ -1,7 +1,14 @@
 ;;; GUI settings
 
+;; Theme
+(use-package monokai
+  :ensure monokai-theme
+  :init (load-theme 'monokai t))
 
-(load-theme 'monokai t)
+(use-package zenburn
+  :ensure zenburn-theme
+  :disabled
+  :init (load-theme 'zenburn t))
 
 ;; Highlight parenthesis pairs
 (use-package paren
