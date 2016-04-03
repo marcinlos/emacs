@@ -27,6 +27,7 @@
 ;; General config
 (require 'mlos-gui)
 (require 'mlos-editing)
+(require 'mlos-parens)
 (require 'mlos-backup)
 (require 'mlos-ido)
 (require 'mlos-spelling)
@@ -36,6 +37,7 @@
 (require 'mlos-flycheck)
 
 ;; Language-specific config
+(require 'mlos-elisp)
 (require 'mlos-org)
 (require 'mlos-latex)
 (require 'mlos-haskell)

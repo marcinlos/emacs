@@ -30,6 +30,12 @@
 ;; Display partially entered commands faster
 (setq echo-keystrokes 0.1)
 
+(use-package eldoc
+  :diminish ""
+  :config
+  ;; No delay for ElDoc
+  (setq eldoc-idle-delay 0))
+
 ;; Better naming for buffers with same name
 (use-package uniquify
   :config
