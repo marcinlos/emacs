@@ -43,6 +43,16 @@
 ;; Highlight current line
 (global-hl-line-mode)
 
+;; Displays count and position of search matches
+(use-package anzu
+  :ensure t
+  :diminish anzu-mode
+  :config
+  (global-anzu-mode)
+  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+  (global-set-key [remap query-replace] 'anzu-query-replace)
+  (global-set-key (kbd "M-R") 'anzu-replace-at-cursor-thing))
+
 ;; Mark trailing whitespace in programming modes
 (add-hook 'prog-mode-hook
           (lambda () (setq show-trailing-whitespace t)))
