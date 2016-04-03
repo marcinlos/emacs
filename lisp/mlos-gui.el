@@ -24,6 +24,13 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
+
+(use-package frame
+  :config
+  ;; unbind frame suspension
+  (global-set-key (kbd "C-z") nil)
+  (global-set-key (kbd "C-x C-z") nil))
+
 ;; No splash screen
 (setq inhibit-startup-message t)
 
