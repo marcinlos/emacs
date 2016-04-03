@@ -26,6 +26,16 @@
 
 (global-set-key (kbd "C-;") 'mlos/toggle-comment)
 
+;; Let M-backspace kill text backward to indentation
+(defun mlos/kill-backward-to-indentation ()
+  "Kills text backward to the first non-white-space character on this line"
+  (interactive)
+  (back-to-indentation)
+  (kill-line))
+
+(global-set-key (kbd "<M-backspace>") 'mlos/kill-backward-to-indentation)
+
+
 ;; Better expanding
 (global-set-key (kbd "M-/") 'hippie-expand)
 
