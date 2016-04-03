@@ -68,7 +68,14 @@
 ;; Load dired (we want C-x C-j)
 (use-package dired
   :config
-  (require 'dired-x))
+  (require 'dired-x)
+  (setq dired-auto-revert-buffer t
+        ;; l - mandatory
+        ;; a - list all files
+        ;; h - human-readable sizes
+        ;; v - natural sorting (GNU)
+        ;; group-directories-first (GNU)
+        dired-listing-switches "-lahv --group-directories-first"))
 
 
 (provide 'mlos-misc)
