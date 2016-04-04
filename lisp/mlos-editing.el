@@ -81,5 +81,10 @@
   :config
   (global-undo-tree-mode))
 
+;; Sub-word movement
+(use-package subword
+  :diminish subword-mode
+  ;; don't load, just diminish if loaded
+  :defer t)
 
 (provide 'mlos-editing)

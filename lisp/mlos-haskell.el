@@ -38,6 +38,8 @@
 
     ;; enable code completion
     (company-mode)
+    ;; sub-word movement
+    (subword-mode)
     ;; diminish minor modes
     (diminish 'haskell-doc-mode)
     (diminish 'interactive-haskell-mode))
