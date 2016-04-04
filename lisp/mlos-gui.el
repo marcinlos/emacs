@@ -50,6 +50,16 @@
 ;; Highlight current line
 (global-hl-line-mode)
 
+;; Mode line modification
+(use-package smart-mode-line
+  :ensure t
+  :config
+  ;; theme using colors from main GUI theme
+  (setq sml/theme 'respectful)
+  ;; avoid confirmation prompt
+  (setq sml/no-confirm-load-theme t)
+  (sml/setup))
+
 ;; Displays count and position of search matches
 (use-package anzu
   :ensure t
@@ -63,6 +73,7 @@
 ;; Mark trailing whitespace in programming modes
 (add-hook 'prog-mode-hook
           (lambda () (setq show-trailing-whitespace t)))
+
 
 ;; Font - Consolas
 (set-face-attribute 'default nil :family "Consolas" :height 100)
