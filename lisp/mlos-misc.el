@@ -18,6 +18,11 @@
               scroll-margin 3
               scroll-preserve-screen-position t)
 
+;; Scroll by half screen
+(use-package view
+  :bind (([remap scroll-up-command] . View-scroll-half-page-forward)
+         ([remap scroll-down-command] . View-scroll-half-page-backward)))
+
 ;; Switch windows with M-o
 (global-set-key (kbd "M-o") 'other-window)
 
