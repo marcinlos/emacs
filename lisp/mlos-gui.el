@@ -70,6 +70,13 @@
   (global-set-key [remap query-replace] 'anzu-query-replace)
   (global-set-key (kbd "M-R") 'anzu-replace-at-cursor-thing))
 
+;; Display binding completions
+(use-package which-key
+  :ensure t
+  :diminish which-key-mode
+  :config
+  (which-key-mode))
+
 ;; Mark trailing whitespace in programming modes
 (add-hook 'prog-mode-hook
           (lambda () (setq show-trailing-whitespace t)))
