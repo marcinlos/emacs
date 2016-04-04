@@ -57,8 +57,12 @@
     (bind-key "C-c C-n C-i" #'haskell-process-do-info haskell-mode-map)
     (bind-key "C-c C-n C-c" #'haskell-process-cabal-buil haskell-mode-map)
     (bind-key "C-c C-n c" #'haskell-process-cabal haskell-mode-map))
+  ;; haskell interactive mode bindings
+  (with-eval-after-load 'interactive-haskell-mode
+    (bind-key "M-." #'haskell-mode-goto-loc interactive-haskell-mode-map)
+    (bind-key "C-c C-n C-t" #'haskell-mode-show-type-at interactive-haskell-mode-map))
   ;; cabal file bindings
-  (with-eval-after-load #'haskell-cabal
+  (with-eval-after-load 'haskell-cabal
     (bind-key "C-c C-z" #'haskell-interactive-switch haskell-cabal-mode-map)
     (bind-key "C-c C-k" #'haskell-interactive-mode-clear haskell-cabal-mode-map)
     (bind-key "C-c C-c" #'haskell-process-cabal-build haskell-cabal-mode-map)
