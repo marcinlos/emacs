@@ -39,7 +39,9 @@
 
   (define-key ibuffer-mode-map (kbd "C-x C-f") 'mlos/ibuffer-ido-find-file)
   ;; conflicts with custom other-window binding
-  (define-key ibuffer-mode-map (kbd "M-o") nil))
+  (define-key ibuffer-mode-map (kbd "M-o") nil)
+  ;; conflicts with ace-window binding
+  (define-key ibuffer-mode-map (kbd "M-p") nil))
 
 
 ;; Answer prompt with one letter
