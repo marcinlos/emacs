@@ -46,5 +46,10 @@
   ;; use home row to address windows
   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
 
+;; Go to thing declaration
+(use-package imenu-anywhere
+  :ensure t
+  :bind (("C-c i" . imenu-anywhere)))
+
 
 (provide 'mlos-movement)
