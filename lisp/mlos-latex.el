@@ -16,7 +16,7 @@
     (require 'flyspell)
     (flyspell-mode t))
 
-  (add-hook 'LaTeX-mode-hook 'mlos/latex-mode-hook))
+  (add-hook 'LaTeX-mode-hook #'mlos/latex-mode-hook))
 
 
 (provide 'mlos-latex)

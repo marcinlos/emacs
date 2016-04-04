@@ -9,7 +9,7 @@
     (eldoc-mode)
     (paredit-mode))
   (dolist (m modes)
-    (add-hook m 'mlos/setup-elisp-modes)))
+    (add-hook m #'mlos/setup-elisp-modes)))
 
 
 (provide 'mlos-elisp)

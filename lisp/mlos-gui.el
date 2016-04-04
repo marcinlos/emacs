@@ -42,7 +42,7 @@
 (use-package linum
   :config
   ;; only needed for programming
-  (add-hook 'prog-mode-hook 'linum-mode))
+  (add-hook 'prog-mode-hook #'linum-mode))
 
 ;; Display column number in the mode line
 (column-number-mode)
@@ -66,9 +66,9 @@
   :diminish anzu-mode
   :config
   (global-anzu-mode)
-  (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
-  (global-set-key [remap query-replace] 'anzu-query-replace)
-  (global-set-key (kbd "M-R") 'anzu-replace-at-cursor-thing))
+  (global-set-key [remap query-replace-regexp] #'anzu-query-replace-regexp)
+  (global-set-key [remap query-replace] #'anzu-query-replace)
+  (global-set-key (kbd "M-R") #'anzu-replace-at-cursor-thing))
 
 ;; Display binding completions
 (use-package which-key

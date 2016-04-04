@@ -23,7 +23,7 @@
        (list (ido-read-file-name "Find file:" default-dir))))
     (find-file file))
 
-  (define-key ibuffer-mode-map (kbd "C-x C-f") 'mlos/ibuffer-ido-find-file)
+  (define-key ibuffer-mode-map (kbd "C-x C-f") #'mlos/ibuffer-ido-find-file)
   ;; conflicts with custom other-window binding
   (define-key ibuffer-mode-map (kbd "M-o") nil))
 

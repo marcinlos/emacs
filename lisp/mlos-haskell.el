@@ -44,32 +44,32 @@
     (diminish 'haskell-doc-mode)
     (diminish 'interactive-haskell-mode))
 
-  (add-hook 'haskell-mode-hook 'mlos/haskell-mode-hook)
+  (add-hook 'haskell-mode-hook #'mlos/haskell-mode-hook)
 
   ;; Key bindings
 
   ;; haskell bindings
   (with-eval-after-load 'haskell-mode
-    (bind-key "M-/" 'company-complete haskell-mode-map)
-    (bind-key "C-c C-l" 'haskell-process-load-file haskell-mode-map)
-    (bind-key "C-c C-z" 'haskell-interactive-switch haskell-mode-map)
-    (bind-key "C-c C-n C-t" 'haskell-process-do-type haskell-mode-map)
-    (bind-key "C-c C-n C-i" 'haskell-process-do-info haskell-mode-map)
-    (bind-key "C-c C-n C-c" 'haskell-process-cabal-buil haskell-mode-map)
-    (bind-key "C-c C-n c" 'haskell-process-cabal haskell-mode-map))
+    (bind-key "M-/" #'company-complete haskell-mode-map)
+    (bind-key "C-c C-l" #'haskell-process-load-file haskell-mode-map)
+    (bind-key "C-c C-z" #'haskell-interactive-switch haskell-mode-map)
+    (bind-key "C-c C-n C-t" #'haskell-process-do-type haskell-mode-map)
+    (bind-key "C-c C-n C-i" #'haskell-process-do-info haskell-mode-map)
+    (bind-key "C-c C-n C-c" #'haskell-process-cabal-buil haskell-mode-map)
+    (bind-key "C-c C-n c" #'haskell-process-cabal haskell-mode-map))
   ;; cabal file bindings
-  (with-eval-after-load 'haskell-cabal
-    (bind-key "C-c C-z" 'haskell-interactive-switch haskell-cabal-mode-map)
-    (bind-key "C-c C-k" 'haskell-interactive-mode-clear haskell-cabal-mode-map)
-    (bind-key "C-c C-c" 'haskell-process-cabal-build haskell-cabal-mode-map)
-    (bind-key "C-c c" 'haskell-process-cabal haskell-cabal-mode-map)))
+  (with-eval-after-load #'haskell-cabal
+    (bind-key "C-c C-z" #'haskell-interactive-switch haskell-cabal-mode-map)
+    (bind-key "C-c C-k" #'haskell-interactive-mode-clear haskell-cabal-mode-map)
+    (bind-key "C-c C-c" #'haskell-process-cabal-build haskell-cabal-mode-map)
+    (bind-key "C-c c" #'haskell-process-cabal haskell-cabal-mode-map)))
 
 ;; hi2 intendation
 (use-package hi2
   :ensure t
   :diminish 'hi2-mode
   :config
-  (add-hook 'haskell-mode-hook 'turn-on-hi2)
+  (add-hook 'haskell-mode-hook #'turn-on-hi2)
   ;; disable visual indicators
   (setq hi2-show-indentations nil))
 
@@ -78,7 +78,7 @@
   :ensure t
   :config
   (push 'company-ghci company-backends)
-  (add-hook 'haskell-mode-hook 'company-mode))
+  (add-hook 'haskell-mode-hook #'company-mode))
 
 
 (provide 'mlos-haskell)
