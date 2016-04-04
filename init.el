@@ -26,6 +26,7 @@
 
 ;; General config
 (require 'mlos-gui)
+(require 'mlos-movement)
 (require 'mlos-editing)
 (require 'mlos-parens)
 (require 'mlos-backup)

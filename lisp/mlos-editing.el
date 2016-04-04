@@ -54,38 +54,11 @@
   :bind (("C-=" . er/expand-region)
          ("C-M-=" . er/contract-region)))
 
-;; Jump to location marked by letter
-(use-package avy
-  :ensure t
-  :bind (("C-'" . avy-goto-char-2)
-         ("C-\"" . avy-goto-char-timer)
-         ("C-M-'" . avy-pop-mark)))
-
-;; Follow links marked by letter
-(use-package ace-link
-  :ensure t
-  :config
-  (ace-link-setup-default))
-
-;; Jump/delete window marked by letter
-(use-package ace-window
-  :ensure t
-  :bind (("M-O" . ace-window))
-  :config
-  ;; use home row to address windows
-  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
-
 ;; More natural undo/redo system
 (use-package undo-tree
   :ensure t
   :diminish undo-tree-mode
   :config
   (global-undo-tree-mode))
-
-;; Sub-word movement
-(use-package subword
-  :diminish subword-mode
-  ;; don't load, just diminish if loaded
-  :defer t)
 
 (provide 'mlos-editing)
