@@ -36,6 +36,7 @@
 (require 'mlos-magit)
 (require 'mlos-company)
 (require 'mlos-flycheck)
+(require 'mlos-projectile)
 
 ;; Language-specific config
 (require 'mlos-elisp)
