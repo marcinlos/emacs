@@ -70,7 +70,7 @@
 ;; Jump/delete window marked by letter
 (use-package ace-window
   :ensure t
-  :bind (("M-p" . ace-window))
+  :bind (("M-O" . ace-window))
   :config
   ;; use home row to address windows
   (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l)))
