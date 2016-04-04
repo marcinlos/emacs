@@ -11,8 +11,11 @@
 ;; Tab indents if necessary, otherwise completes
 (setq tab-always-indent 'complete)
 
-;; Align by regex
+;; Align by regexp
 (global-set-key (kbd "C-x \\") 'align-regexp)
+
+;; Fix white-space problems
+(global-set-key (kbd "C-c n") 'whitespace-cleanup)
 
 ;; Toggle comments with C-;
 (defun mlos/toggle-comment ()
