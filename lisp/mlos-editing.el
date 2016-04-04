@@ -48,6 +48,12 @@
   :bind (("M-z" . zop-to-char)
          ("M-Z" . zop-up-to-char)))
 
+;; Expand selection by semantic units
+(use-package expand-region
+  :ensure t
+  :bind (("C-=" . er/expand-region)
+         ("C-M-=" . er/contract-region)))
+
 ;; More natural undo/redo system
 (use-package undo-tree
   :ensure t
