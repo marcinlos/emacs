@@ -61,4 +61,12 @@
   :config
   (global-undo-tree-mode))
 
+;; Make `eval-expression' more pleasant
+(defun mlos/setup-eval-expression-minibuffer ()
+  (eldoc-mode)
+  (paredit-mode))
+
+(add-hook 'eval-expression-minibuffer-setup-hook 'mlos/setup-eval-expression-minibuffer)
+
+
 (provide 'mlos-editing)
