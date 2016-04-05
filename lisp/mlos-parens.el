@@ -2,7 +2,7 @@
 
 (use-package paredit
   :ensure t
-  :diminish "")
+  :diminish paredit-mode)
 
 ;; Highlight brackets according to their depth
 (use-package rainbow-delimiters
