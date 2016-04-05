@@ -34,11 +34,13 @@
 ;; Display partially entered commands faster
 (setq echo-keystrokes 0.1)
 
+;; Show function signature in the echo area
 (use-package eldoc
-  :diminish ""
+  :diminish eldoc-mode
   :config
-  ;; No delay for ElDoc
-  (setq eldoc-idle-delay 0))
+  ;; No delay, lowercase arguments
+  (setq eldoc-idle-delay 0
+        eldoc-argument-case 'downcase))
 
 ;; Auto-revert
 (use-package autorevert
