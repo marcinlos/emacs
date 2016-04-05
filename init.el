@@ -44,4 +44,5 @@
 (require 'mlos-org)
 (require 'mlos-latex)
 (require 'mlos-haskell)
+(require 'mlos-slime)
 
