@@ -28,6 +28,7 @@
 (require 'mlos-gui)
 (require 'mlos-movement)
 (require 'mlos-editing)
+(require 'mlos-grep)
 (require 'mlos-parens)
 (require 'mlos-backup)
 (require 'mlos-ido)
