@@ -17,7 +17,7 @@
          ([remap scroll-down-command] . View-scroll-half-page-backward)))
 
 ;; Switch windows with M-o
-(global-set-key (kbd "M-o") #'other-window)
+(bind-key "M-o" #'other-window)
 
 ;; Sub-word movement
 (use-package subword

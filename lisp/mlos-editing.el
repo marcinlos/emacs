@@ -12,10 +12,10 @@
 (setq tab-always-indent 'complete)
 
 ;; Align by regexp
-(global-set-key (kbd "C-x \\") #'align-regexp)
+(bind-key "C-x \\" #'align-regexp)
 
 ;; Fix white-space problems
-(global-set-key (kbd "C-c n") #'whitespace-cleanup)
+(bind-key "C-c n" #'whitespace-cleanup)
 
 ;; Toggle comments with C-;
 (defun mlos/toggle-comment ()
@@ -27,7 +27,7 @@
       (setq beg (line-beginning-position) end (line-end-position)))
     (comment-or-uncomment-region beg end)))
 
-(global-set-key (kbd "C-;") #'mlos/toggle-comment)
+(bind-key "C-;" #'mlos/toggle-comment)
 
 ;; Let C-M-backspace kill text backward to indentation
 (defun mlos/kill-backward-to-indentation ()
@@ -36,11 +36,11 @@
   (back-to-indentation)
   (kill-line))
 
-(global-set-key (kbd "<C-M-backspace>") #'mlos/kill-backward-to-indentation)
+(bind-key "<C-M-backspace>" #'mlos/kill-backward-to-indentation)
 
 
 ;; Better expanding
-(global-set-key (kbd "M-/") #'hippie-expand)
+(bind-key "M-/" #'hippie-expand)
 
 ;; Override marked text
 (delete-selection-mode)

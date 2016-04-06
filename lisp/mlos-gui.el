@@ -28,8 +28,8 @@
 (use-package frame
   :config
   ;; unbind frame suspension
-  (global-set-key (kbd "C-z") nil)
-  (global-set-key (kbd "C-x C-z") nil))
+  (unbind-key "C-z")
+  (unbind-key "C-x C-z"))
 
 ;; No splash screen
 (setq inhibit-startup-message t)
@@ -66,9 +66,9 @@
   :diminish anzu-mode
   :config
   (global-anzu-mode)
-  (global-set-key [remap query-replace-regexp] #'anzu-query-replace-regexp)
-  (global-set-key [remap query-replace] #'anzu-query-replace)
-  (global-set-key (kbd "M-R") #'anzu-replace-at-cursor-thing))
+  (bind-key [remap query-replace-regexp] #'anzu-query-replace-regexp)
+  (bind-key [remap query-replace] #'anzu-query-replace)
+  (bind-key "M-R" #'anzu-replace-at-cursor-thing))
 
 ;; Display binding completions
 (use-package which-key

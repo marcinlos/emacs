@@ -50,23 +50,28 @@
 
   ;; haskell bindings
   (with-eval-after-load 'haskell-mode
-    (bind-key "M-/" #'company-complete haskell-mode-map)
-    (bind-key "C-c C-l" #'haskell-process-load-file haskell-mode-map)
-    (bind-key "C-c C-z" #'haskell-interactive-switch haskell-mode-map)
-    (bind-key "C-c C-n C-t" #'haskell-process-do-type haskell-mode-map)
-    (bind-key "C-c C-n C-i" #'haskell-process-do-info haskell-mode-map)
-    (bind-key "C-c C-n C-c" #'haskell-process-cabal-buil haskell-mode-map)
-    (bind-key "C-c C-n c" #'haskell-process-cabal haskell-mode-map))
+    (bind-keys :map haskell-mode-map
+               ("C-c C-l" . haskell-process-load-file)
+               ("C-c C-z" . haskell-interactive-switch)
+               ("C-c C-t" . haskell-process-do-type)
+               ("C-c C-i" . haskell-process-do-info)
+               ("C-c c"   . haskell-process-cabal)
+               ("C-c C-c" . haskell-process-cabal-build))
+    (bind-key "M-/" #'company-complete haskell-mode-map))
+
   ;; haskell interactive mode bindings
   (with-eval-after-load 'interactive-haskell-mode
-    (bind-key "M-." #'haskell-mode-goto-loc interactive-haskell-mode-map)
-    (bind-key "C-c C-n C-t" #'haskell-mode-show-type-at interactive-haskell-mode-map))
+    (bind-keys :map interactive-haskell-mode-map
+               ("C-c C-t" . haskell-mode-show-type-at)
+               ("M-."     . haskell-mode-goto-loc)))
+
   ;; cabal file bindings
   (with-eval-after-load 'haskell-cabal
-    (bind-key "C-c C-z" #'haskell-interactive-switch haskell-cabal-mode-map)
-    (bind-key "C-c C-k" #'haskell-interactive-mode-clear haskell-cabal-mode-map)
-    (bind-key "C-c C-c" #'haskell-process-cabal-build haskell-cabal-mode-map)
-    (bind-key "C-c c" #'haskell-process-cabal haskell-cabal-mode-map)))
+    (bind-keys :map haskell-cabal-mode-map
+               ("C-c C-z" . haskell-interactive-switch)
+               ("C-c C-k" . haskell-interactive-mode-clear)
+               ("C-c c"   . haskell-process-cabal)
+               ("C-c C-c" . haskell-process-cabal-build))))
 
 ;; hi2 intendation
 (use-package hi2
