@@ -11,7 +11,10 @@
 (package-initialize)
 
 ;; Set up load path
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(defconst mlos/load-path (expand-file-name "lisp" user-emacs-directory)
+  "Directory with custom configuration files")
+
+(add-to-list 'load-path mlos/load-path)
 
 ;; Install and configure use-package
 (unless (package-installed-p 'use-package)
