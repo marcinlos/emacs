@@ -1,5 +1,8 @@
 ;;; Main Emacs config file
 
+;; Less frequent garbage collection (optimization)
+(setq gc-cons-threshold 100000000)
+
 ;; Initialize package system
 (require 'package)
 
