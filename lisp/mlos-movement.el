@@ -1,11 +1,5 @@
 ;;; Movement configuration
 
-;; Move between windows with S-(arrow)
-(use-package windmove
-  :config
-  (windmove-default-keybindings)
-  (setq windmove-wrap-around t))
-
 ;; Scrolling
 (setq-default scroll-conservatively 100
               scroll-margin 3
