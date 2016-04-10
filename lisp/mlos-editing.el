@@ -17,6 +17,10 @@
 ;; Fix white-space problems
 (bind-key "C-c n" #'whitespace-cleanup)
 
+;; Don't disable commands
+(dolist (cmd '(upcase-region downcase-region))
+  (put cmd 'disabled nil))
+
 ;; Toggle comments with C-;
 (defun mlos/toggle-comment ()
   "Toggles comment of selected region or current line"
