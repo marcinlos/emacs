@@ -8,6 +8,7 @@
   ;; Don't ask to confirm creation of new buffer
   (setq ido-create-new-buffer 'always
         confirm-nonexistent-file-or-buffer nil)
+  (ido-everywhere)
   (ido-mode))
 
 ;; Flex matching for ido
