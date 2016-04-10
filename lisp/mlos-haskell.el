@@ -70,7 +70,7 @@
 ;; like ElDoc, for haskell
 (use-package haskell-doc
   :diminish haskell-doc-mode
-  :defer)
+  :defer t)
 
 
 ;; hi2 intendation

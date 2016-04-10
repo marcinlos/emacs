@@ -8,7 +8,8 @@
   ;; symbol navigation as in SLIME
   (use-package elisp-slime-nav
     :ensure t
-    :diminish elisp-slime-nav-mode)
+    :diminish elisp-slime-nav-mode
+    :defer t)
 
   (defun mlos/setup-elisp-modes ()
     "Enable tools for editing Emacs Lisp code"

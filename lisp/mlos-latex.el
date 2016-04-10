@@ -2,6 +2,7 @@
 
 (use-package tex
   :ensure auctex
+  :defer t
   :config
   (setq TeX-auto-save t
         TeX-parse-self t)

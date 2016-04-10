@@ -38,6 +38,7 @@
 ;; Show function signature in the echo area
 (use-package eldoc
   :diminish eldoc-mode
+  :defer t
   :config
   ;; No delay, lowercase arguments
   (setq eldoc-idle-delay 0
