@@ -7,7 +7,7 @@
 
 ;; Scroll by half screen
 (use-package view
-  :bind (([remap scroll-up-command] . View-scroll-half-page-forward)
+  :bind (([remap scroll-up-command]   . View-scroll-half-page-forward)
          ([remap scroll-down-command] . View-scroll-half-page-backward)))
 
 ;; Switch windows with M-o
@@ -22,8 +22,8 @@
 ;; Jump to location marked by letter
 (use-package avy
   :ensure t
-  :bind (("C-'" . avy-goto-char-2)
-         ("C-\"" . avy-goto-char-timer)
+  :bind (("C-'"   . avy-goto-char-2)
+         ("C-\""  . avy-goto-char-timer)
          ("C-M-'" . avy-pop-mark)))
 
 ;; Follow links marked by letter
