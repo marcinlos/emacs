@@ -64,11 +64,13 @@
 (use-package anzu
   :ensure t
   :diminish anzu-mode
+  :demand
   :config
   (global-anzu-mode)
-  (bind-key [remap query-replace-regexp] #'anzu-query-replace-regexp)
-  (bind-key [remap query-replace] #'anzu-query-replace)
-  (bind-key "M-R" #'anzu-replace-at-cursor-thing))
+
+  :bind (([remap query-replace-regexp] . anzu-query-replace-regexp)
+         ([remap query-replace] . anzu-query-replace)
+         ("M-R" . anzu-replace-at-cursor-thing)))
 
 ;; Display binding completions
 (use-package which-key
