@@ -1,10 +1,6 @@
 ;;; Haskell mode configuration
 
 
-;; Make sure emacs can find the haskell auxiliary executables
-(let ((mlos/cabal-path (expand-file-name "~/.cabal/bin")))
-  (setenv "PATH" (concat mlos/cabal-path ":" (getenv "PATH")))
-  (add-to-list 'exec-path mlos/cabal-path))
 (use-package haskell-mode
   :ensure t
   :commands haskell-mode
