@@ -1,12 +1,6 @@
 ;;; Miscellaneous pieces of configuration not fitting any other place
 
 
-;; Save/restore window configuration
-(use-package winner
-  :bind ("C-x l" . winner-undo)
-  :config
-  (winner-mode))
-
 ;; Use IBuffer instead of built-in buffer manager
 (use-package ibuffer
   :bind (([remap list-buffers] . ibuffer))

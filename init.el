@@ -33,6 +33,7 @@
 ;; General config
 (require 'mlos-which-key)
 (require 'mlos-gui)
+(require 'mlos-window)
 (require 'mlos-movement)
 (require 'mlos-editing)
 (require 'mlos-grep)
