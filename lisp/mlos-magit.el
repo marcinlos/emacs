@@ -2,7 +2,8 @@
 
 (use-package magit
   :ensure t
-  :config
+  :init
+  (mlos/describe-keys "C-c v" "git")
 
   :bind (("C-c v v" . magit-status)
          ("C-c v b" . magit-blame)
