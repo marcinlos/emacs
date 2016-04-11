@@ -52,7 +52,7 @@
 ;; Go to thing declaration
 (use-package imenu-anywhere
   :ensure t
-  :bind (("C-c i" . imenu-anywhere)))
+  :bind (("C-x i" . imenu-anywhere)))
 
 
 (provide 'mlos-movement)

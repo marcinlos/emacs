@@ -15,7 +15,8 @@
 (bind-key "C-x \\" #'align-regexp)
 
 ;; Fix white-space problems
-(bind-key "C-c n" #'whitespace-cleanup)
+(bind-key "C-x w" #'whitespace-cleanup)
+
 
 ;; Don't disable commands
 (dolist (cmd '(upcase-region downcase-region))
