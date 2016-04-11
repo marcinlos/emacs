@@ -31,6 +31,7 @@
 (require 'personal-info)
 
 ;; General config
+(require 'mlos-which-key)
 (require 'mlos-gui)
 (require 'mlos-movement)
 (require 'mlos-editing)
