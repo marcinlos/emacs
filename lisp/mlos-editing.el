@@ -17,6 +17,12 @@
 ;; Fix white-space problems
 (bind-key "C-x w" #'whitespace-cleanup)
 
+;; Move lines
+(use-package move-text
+  :ensure t
+  :bind
+  (("M-P" . move-text-up)
+   ("M-N" . move-text-down)))
 
 ;; Don't disable commands
 (dolist (cmd '(upcase-region downcase-region))
