@@ -33,5 +33,8 @@
   :ensure t
   :bind (("C-h C-k" . free-keys)))
 
+;; Bindings that stick
+(use-package hydra
+  :ensure t)
 
 (provide 'mlos-which-key)
