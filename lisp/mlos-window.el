@@ -8,6 +8,10 @@
   (unbind-key "C-c <left>" winner-mode-map)
   (unbind-key "C-c <right>" winner-mode-map))
 
+(defhydra mlos-hydra-winner ()
+  "window configuration undo/redo"
+  ("p" winner-undo)
+  ("n" winner-redo))
 
 (defhydra mlos-hydra-winsize ()
   "window resizing"
@@ -25,8 +29,8 @@
            ("q" . delete-window)
            ("f" . find-file-other-window)
            ("b" . switch-to-buffer-other-window)
-           ("u" . winner-undo)
-           ("U" . winner-redo)
+           ("p" . mlos-hydra-winner/winner-undo)
+           ("n" . mlos-hydra-winner/winner-redo)
            ("=" . mlos-hydra-winsize/balance-windows)
            ("<" . mlos-hydra-winsize/shrink-window-horizontally)
            (">" . mlos-hydra-winsize/enlarge-window-horizontally)
