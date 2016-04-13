@@ -17,6 +17,13 @@
 ;; Fix white-space problems
 (bind-key "C-x w" #'whitespace-cleanup)
 
+;; Additional functionality for copying
+(use-package easy-kill
+  :ensure t
+  :bind
+  (([remap kill-ring-save] . easy-kill)
+   ([remap mark-sexp] . easy-mark)))
+
 ;; Move lines
 (use-package move-text
   :ensure t
