@@ -31,6 +31,25 @@
   (("M-P" . move-text-up)
    ("M-N" . move-text-down)))
 
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-+"         . mc/mark-next-like-this)
+         ("C-M-+"       . mc/mark-previous-like-this)
+         ("C-_"         . mc/unmark-next-like-this)
+         ("C-M-_"       . mc/unmark-previous-like-this)
+         ("C-c m m"     . mc/mark-all-dwim)
+         ("C-c m r"     . mc/mark-all-in-region)
+         ("C-c m l l"   . mc/edit-lines)
+         ("C-c m l a"   . mc/edit-beginnings-of-lines)
+         ("C-c m l e"   . mc/edit-ends-of-lines)
+         ("C-<mouse-1>" . mc/add-cursor-on-click))
+  :init
+  ;; by default this event opens a menu
+  (unbind-key "C-<down-mouse-1>")
+  (mlos/describe-keys
+   "C-c m" "multiple cursors"
+   "C-c m l" "lines"))
+
 ;; Don't disable commands
 (dolist (cmd '(upcase-region downcase-region))
   (put cmd 'disabled nil))
