@@ -99,7 +99,8 @@
   :ensure t
   :diminish undo-tree-mode
   :config
-  (global-undo-tree-mode))
+  (global-undo-tree-mode)
+  (unbind-key "C-_" undo-tree-map))
 
 ;; Make `eval-expression' more pleasant
 (defun mlos/setup-eval-expression-minibuffer ()
