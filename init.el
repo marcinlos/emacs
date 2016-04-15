@@ -55,4 +55,5 @@
 (require 'mlos-haskell)
 (require 'mlos-slime)
 (require 'mlos-clojure)
+(require 'mlos-scheme)
 
