@@ -41,6 +41,7 @@
 (require 'mlos-parens)
 (require 'mlos-backup)
 (require 'mlos-ido)
+(require 'mlos-helm)
 (require 'mlos-spelling)
 (require 'mlos-misc)
 (require 'mlos-magit)
