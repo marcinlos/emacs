@@ -22,6 +22,16 @@
   ;; conflicts with custom other-window binding
   (unbind-key "M-o" ibuffer-mode-map))
 
+;; Group buffers by projectile project
+(use-package ibuffer-vc
+  :ensure t
+  :init
+  (defun mlos/ibuffer-group-by-project ()
+    (ibuffer-vc-set-filter-groups-by-vc-root)
+    (unless (eq ibuffer-sorting-mode 'alphabetic)
+      (ibuffer-do-sort-by-alphabetic)))
+  (add-hook 'ibuffer-hook #'mlos/ibuffer-group-by-project))
+
 
 ;; Answer prompt with one letter
 (fset 'yes-or-no-p 'y-or-n-p)
