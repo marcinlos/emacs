@@ -7,7 +7,9 @@
 
   :bind (("C-c v v" . magit-status)
          ("C-c v b" . magit-blame)
-         ("C-c v i" . magit-gitignore)))
+         ("C-c v i" . magit-gitignore)
+         ("C-c v r" . magit-show-refs-popup)
+         ("C-c v l" . magit-log-all)))
 
 ;; Move between versions of a file
 (use-package git-timemachine
