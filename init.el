@@ -48,6 +48,7 @@
 (require 'mlos-company)
 (require 'mlos-flycheck)
 (require 'mlos-projectile)
+(require 'mlos-tree)
 
 ;; Language-specific config
 (require 'mlos-elisp)
