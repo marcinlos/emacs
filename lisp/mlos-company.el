@@ -9,6 +9,10 @@
   (setq company-minimum-prefix-length 2)
   ;; short delay before popup appears
   (setq company-idle-delay 0.1)
+  ;; don't convert case of dynamic abbreviations
+  (setq company-dabbrev-downcase nil)
+  ;; show quick access candidate numbers
+  (setq company-show-numbers t)
   ;; enable company mode in all buffers
   (global-company-mode))
 
