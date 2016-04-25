@@ -24,6 +24,11 @@
   ;; writable results
   (use-package wgrep-ag
     :ensure t
-    :defer t))
+    :defer t)
+
+  (use-package helm-ag
+    :ensure t
+    :bind (("C-c s h" . helm-do-ag)
+           ("C-c s b" . helm-do-ag-buffers))))
 
 (provide 'mlos-grep)
