@@ -11,4 +11,12 @@
         '(:eval (format " [%s]" (projectile-project-name)))))
 
 
+;; helm integration with projectile
+(use-package helm-projectile
+  :ensure t
+  :config
+  ;; replace projectile commands with helm
+  (helm-projectile-on))
+
+
 (provide 'mlos-projectile)

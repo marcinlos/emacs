@@ -42,8 +42,4 @@
          ("SPC" . helm-all-mark-rings)))
 
 
-(use-package helm-projectile
-  :ensure t)
-
-
 (provide 'mlos-helm)
