@@ -52,6 +52,10 @@
 (use-package autorevert
   :diminish auto-revert-mode)
 
+;; Diminish abbrev mode
+(use-package abbrev
+  :diminish abbrev-mode)
+
 ;; Better naming for buffers with same name
 (use-package uniquify
   :config
