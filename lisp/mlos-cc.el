@@ -52,15 +52,14 @@
   :defer t
   :config
   (defun mlos/setup-c-modes ()
-    ;; set code style, defaults are ugly
-    (setq c-default-style "linux"
-          c-basic-offset 4)
-    (mlos/add-company-backend 'company-irony)
-    (mlos/add-company-backend 'company-c-headers)
     ;; on-the-fly checker
     (flycheck-mode)
     (irony-eldoc))
-  (mlos/add-c-hook #'mlos/setup-c-modes))
+  (mlos/add-c-hook #'mlos/setup-c-modes)
+  ;; set code style, defaults are ugly
+  (setq c-default-style "linux"
+        c-basic-offset 4)
+  (mlos/add-company-backend '(company-c-headers company-irony)))
 
 
 (provide 'mlos-cc)
