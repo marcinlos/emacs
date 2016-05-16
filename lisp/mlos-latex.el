@@ -10,6 +10,7 @@
   (setq-default TeX-master nil)
 
   (defun mlos/latex-mode-hook ()
+    (turn-on-reftex)
     ;; paragraphs are filled to 80 characters
     (turn-on-auto-fill)
     (set-fill-column 80)
