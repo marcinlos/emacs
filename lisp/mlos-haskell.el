@@ -61,13 +61,6 @@
               ("C-c c"   . haskell-process-cabal)
               ("C-c C-c" . haskell-process-cabal-build)))
 
-;; Flycheck checker for haskell
-(use-package flycheck-haskell
-  :ensure t
-  :commands flycheck-haskell-setup
-  :init
-  (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
-
 ;; like ElDoc, for haskell
 (use-package haskell-doc
   :diminish haskell-doc-mode
