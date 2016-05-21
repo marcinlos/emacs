@@ -59,4 +59,5 @@
 (require 'mlos-slime)
 (require 'mlos-clojure)
 (require 'mlos-scheme)
+(require 'mlos-agda)
 
