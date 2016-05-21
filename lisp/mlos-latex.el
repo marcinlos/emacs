@@ -26,4 +26,9 @@
     (visual-line-mode))
   (add-hook 'bibtex-mode-hook #'mlos/bibtex-mode-hook))
 
+;;; Helm support for LaTeX bibliography
+(use-package helm-bibtex
+  :ensure t
+  :defer t)
+
 (provide 'mlos-latex)
