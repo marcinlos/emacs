@@ -13,12 +13,13 @@
    '(haskell-process-log t))
 
   ;; Use cabal-repl
-  (custom-set-variables '(haskell-process-type 'cabal-repl))
+  (custom-set-variables '(haskell-process-type 'stack-ghci))
 
   ;; ... with ghci-ng if possible
   (when (executable-find "ghci-ng")
-    (setq haskell-process-args-cabal-repl
-          '("--ghc-option=-ferror-spans" "--with-ghc=ghci-ng")))
+    (setq haskell-process-wrapper-function
+          (lambda (args)
+            (append args (list "--with-ghc" "ghci-ng")))))
 
   (defun mlos/haskell-mode-hook ()
     ;; enable interactive mode
