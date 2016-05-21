@@ -77,6 +77,7 @@
 ;; hi2 intendation
 (use-package hi2
   :ensure t
+  :disabled
   :commands turn-on-hi2
   :diminish 'hi2-mode
   :init
@@ -84,6 +85,13 @@
   :config
   ;; disable visual indicators
   (setq hi2-show-indentations nil))
+
+;; Structured Haskell mode
+(use-package shm
+  :ensure t
+  :if (executable-find "structured-haskell-mode")
+  :init
+  (add-hook 'haskell-mode-hook #'structured-haskell-mode))
 
 ;; Backend for company
 (use-package company-ghci
