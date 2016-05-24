@@ -3,7 +3,12 @@
 ;; Theme
 (use-package monokai
   :ensure monokai-theme
-  :init (load-theme 'monokai t))
+  :init
+  (setq monokai-height-plus-1 1.0
+        monokai-height-plus-2 1.05
+        monokai-height-plus-3 1.1
+        monokai-height-plus-4 1.15)
+ (load-theme 'monokai t))
 
 (use-package zenburn
   :ensure zenburn-theme
