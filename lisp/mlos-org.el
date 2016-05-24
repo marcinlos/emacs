@@ -16,7 +16,7 @@
 
   ;; disable electric-indent as it causes problems with org
   (add-hook 'org-mode-hook
-            (lambda () (electric-indent-mode -1))))
+            (lambda () (electric-indent-local-mode -1))))
 
 (use-package org-ref
   :ensure t
