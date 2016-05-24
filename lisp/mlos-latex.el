@@ -19,6 +19,13 @@
 
   (add-hook 'LaTeX-mode-hook #'mlos/latex-mode-hook))
 
+(use-package reftex
+  :defer t
+  :diminish reftex-mode
+  :config
+  (require 'mlos-bibliography)
+  (setq reftex-default-bibliography '(mlos/bibilography-file)))
+
 (use-package bibtex
   :defer t
   :init
@@ -29,6 +36,11 @@
 ;;; Helm support for LaTeX bibliography
 (use-package helm-bibtex
   :ensure t
-  :defer t)
+  :defer t
+  :config
+  (require 'mlos-bibliography)
+  (setq bibtex-completion-bibliography mlos/bibliography-file
+        bibtex-completion-library-path mlos/bibliography-pdfs-dir
+        bibtex-completion-notes-path mlos/bibliography-notes-dir))
 
 (provide 'mlos-latex)
