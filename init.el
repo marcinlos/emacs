@@ -53,6 +53,7 @@
 ;; Language-specific config
 (require 'mlos-elisp)
 (require 'mlos-cc)
+(require 'mlos-bibliography)
 (require 'mlos-org)
 (require 'mlos-latex)
 (require 'mlos-haskell)
