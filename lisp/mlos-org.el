@@ -18,5 +18,14 @@
   (add-hook 'org-mode-hook
             (lambda () (electric-indent-mode -1))))
 
+(use-package org-ref
+  :ensure t
+  :defer t
+  :config
+  (require 'mlos-bibliography)
+  (setq org-ref-notes-directory mlos/bibliography-notes-dir
+        org-ref-default-bibliography mlos/bibliography-file
+        org-ref-bibliography-notes (mlos/in-bib-dir "notes.org")
+        org-ref-pdf-directory mlos/bibliography-pdfs-dir))
 
 (provide 'mlos-org)
