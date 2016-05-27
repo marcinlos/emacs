@@ -6,6 +6,10 @@
   :diminish which-key-mode
   :demand
   :config
+  (setq which-key-idle-delay 0.3
+        ;; no delay for subsequent keys
+        which-key-idle-secondary-delay 0)
+
   (which-key-mode)
 
   (defun mlos/describe-keys (&rest args)
