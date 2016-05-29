@@ -6,7 +6,7 @@
   :diminish which-key-mode
   :demand
   :config
-  (setq which-key-idle-delay 0.3
+  (setq which-key-idle-delay 0.6
         ;; no delay for subsequent keys
         which-key-idle-secondary-delay 0)
 
