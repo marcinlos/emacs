@@ -9,10 +9,6 @@
   (dolist (h mlos/c-mode-hooks)
     (add-hook h hook-function)))
 
-(defun mlos/add-company-backend (backend)
-  "Adds specified backend to `company-backends'"
-  (push backend company-backends))
-
 
 (use-package irony
   :ensure t
@@ -48,18 +44,25 @@
     (dolist (path header-paths)
       (push path company-c-headers-path-system))))
 
+
 (use-package cc-mode
   :defer t
+
+  :init
+  (add-hook 'c++-mode-hook
+            (lambda ()
+              (mlos/add-local-company-backend '(company-c-headers company-irony))))
   :config
   (defun mlos/setup-c-modes ()
     ;; on-the-fly checker
     (flycheck-mode)
     (irony-eldoc))
+
   (mlos/add-c-hook #'mlos/setup-c-modes)
+
   ;; set code style, defaults are ugly
   (setq c-default-style "linux"
-        c-basic-offset 4)
-  (mlos/add-company-backend '(company-c-headers company-irony)))
+        c-basic-offset 4))
 
 
 (provide 'mlos-cc)

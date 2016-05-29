@@ -89,11 +89,13 @@
 ;; Backend for company
 (use-package company-ghci
   :ensure t
-  :commands company-ghci
+  :defer t
+
   :init
   (defun mlos/haskell-add-ghci-backend ()
     "Add `company-ghci' to the list of company backends"
-    (push 'company-ghci company-backends))
+    (mlos/add-local-company-backend 'company-ghci))
+
   (add-hook 'haskell-mode-hook #'mlos/haskell-add-ghci-backend))
 
 
