@@ -15,7 +15,8 @@
     (visual-line-mode)
     ;; spell checker
     (require 'flyspell)
-    (flyspell-mode t))
+    (flyspell-mode t)
+    (mlos/set-local-company-backend '(company-dabbrev)))
 
   (add-hook 'LaTeX-mode-hook #'mlos/latex-mode-hook))
 
