@@ -31,10 +31,13 @@
 
   (mlos/describe-keys "C-c c" "completion")
 
+  (defun mlos/set-local-company-backend (backends)
+    "Makes `company-backends' a local variable and sets its value"
+    (set (make-local-variable 'company-backends) backends))
+
   (defun mlos/add-local-company-backend (backend)
     "Makes `company-backends' a local variable and adds specified backend to it"
-    (set (make-local-variable 'company-backends)
-         (append (list backend) company-backends)))
+    (mlos/set-local-company-backend (append (list backend) company-backends)))
 
   :bind (("C-c c i" . company-dabbrev-code)
          ("C-c c y" . company-yasnippet)
