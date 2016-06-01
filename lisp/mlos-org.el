@@ -11,8 +11,20 @@
          ("C-c o b" . org-iswitchb))
 
   :config
-  (setq org-completion-use-ido t)
-  (setq org-outline-path-complete-in-steps nil)
+  (defconst mlos/org-dir "~/notes")
+  (defun mlos/in-org-dir (path)
+    "Takes a relative path and creates an absolute path to the file pointed to
+  by the relative path in `mlos/org-dir' directory"
+    (expand-file-name path mlos/org-dir))
+
+  (setq org-default-notes-file (mlos/in-org-dir "main.org")
+        org-agenda-files (mapcar #'mlos/in-org-dir '("main.org"
+                                                     "research.org"
+                                                     "projects/"))
+        org-completion-use-ido t
+        org-outline-path-complete-in-steps nil
+        ;; add time of the task completion
+        org-log-done t)
 
   ;; disable electric-indent as it causes problems with org
   (add-hook 'org-mode-hook
