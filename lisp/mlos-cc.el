@@ -65,4 +65,12 @@
         c-basic-offset 4))
 
 
+(use-package cmake-mode
+  :defer t
+  :init
+  (add-hook 'cmake-mode-hook
+            (lambda ()
+              (mlos/add-local-company-backend 'company-cmake))))
+
+
 (provide 'mlos-cc)
