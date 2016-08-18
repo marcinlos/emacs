@@ -6,6 +6,7 @@
          :map project-explorer-mode-map
          ("C-M-o" . pe/toggle-omit))
   :config
-  (unbind-key "M-o" project-explorer-mode-map))
+  (add-hook 'project-explorer-mode-hook (lambda ()
+                                          (unbind-key "M-o" project-explorer-mode-map))))
 
 (provide 'mlos-tree)
