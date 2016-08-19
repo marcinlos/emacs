@@ -5,7 +5,9 @@
   :diminish helm-mode
 
   :init
-  (helm-mode))
+  (helm-mode)
+  :config
+  (require 'helm-config))
 
 
 (use-package helm-regexp
