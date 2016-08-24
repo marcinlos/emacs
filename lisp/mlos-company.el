@@ -50,7 +50,6 @@
 
   :config
   (company-quickhelp-mode 1)
-  (unbind-key "M-h" company-quickhelp-mode-map)
 
   (with-eval-after-load 'company
     (bind-key "M-h" #'company-quickhelp-manual-begin company-active-map)))
